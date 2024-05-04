@@ -1,0 +1,90 @@
+.header{
+    z-index:100;
+    display:grid;
+    grid-template-columns: 130px 3fr 1fr;
+    color:white;
+    background-color: black;
+    height:9vh;
+    width:100%;
+    align-items: center;
+    position:fixed;
+    top:0px;
+    transition: all 0.3s ease-in-out;
+    padding-right:30px;
+    box-sizing: border-box;
+}
+
+.logo{
+    transform:translateX(50px);
+    font-size:30px;
+}
+
+.header-nav{
+    display:flex;
+    justify-content: space-evenly;
+    
+}
+
+.header-icons{
+    display:flex;
+    justify-content: space-evenly;
+}
+
+
+.header-nav > nav {
+    position: relative; 
+}
+
+.header-nav > nav:hover{
+    color:rgb(168, 168, 168);
+    cursor: pointer;
+}
+
+.header-nav > nav::after{
+    position:absolute;
+    left:0px;
+    content:'';
+    width:0%;
+    border-radius: 4px;
+    height:5px;
+    background-color: white;
+    bottom:-15px;
+    transition: all 0.4s;
+    
+}
+
+.header-nav > nav:hover::after{
+    width:100%;
+}
+
+.searchbar{
+    transition:all 0.3s ease-in-out;
+    width:60%;
+    padding:0px;
+    height:27px;
+    opacity:1;
+    background-color: transparent;
+    color: white;
+    border: 1px rgb(54, 54, 54) solid;
+    padding-left:10px;
+    box-sizing: border-box;
+}
+
+.searchbar::placeholder{
+    color:white;
+}
+
+.cart-item-number{
+    position: relative;
+}
+
+.cart-item-number > div{
+    position:absolute;
+    border-radius: 50%;
+    width:15px;
+    height:15px;
+    background-color: red;
+    top:10px;
+    left:10px;
+    text-align: center;
+}

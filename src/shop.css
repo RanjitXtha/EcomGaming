@@ -1,0 +1,38 @@
+.shop{
+    margin-top:100px;
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+    column-gap: 5px;
+}
+
+
+.shop-filter{
+    width:100%;
+    height:500px;
+    background-color: lightcoral;
+}
+
+.shop-products{
+    width:100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 50px;
+    
+}
+
+.shop-products-items{
+    width:315px;
+    height:465px;
+    display:grid;
+    row-gap: 10px;
+}
+
+.shop-products-items > img{
+    height:320px;
+}
+
+.shop-items-info{
+    font-size:20px;
+    font-weight: bold;
+}
