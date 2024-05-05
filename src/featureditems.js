@@ -6,6 +6,7 @@ import cpu from './images/cpu.jpg';
 import hyperx from './images/hyperx.webp';
 import streaming from './images/streaming.jpg';
 import { useInView } from 'react-intersection-observer';
+import { Data } from './data';
 
 const Featured = ()=>{
 
@@ -24,21 +25,26 @@ const Featured = ()=>{
                 
                 <div>
                     <img src={pc1} alt="Here" />
-                </div>
-
-                <div>
-                    <img src={pc1} alt="Here" />
+                    <div className="featured-info">
+                    <p>Prebuilt Gaming PC</p>
+                    Start your gaming journey with professionally designed RDY prebuilt systems and get Free 2-Day Shipping!
+                    </div>
                 </div>
             </div>
 
             <div className="right-featured">
-                <div className="right-featured-divs">
-                    <img src={cpu} alt="Here" />
-                </div>
-
-                <div className="right-featured-divs">
-                    <img src={pc3} alt="Here" />
-                </div>
+                {
+                    Data.slice(0,4).map((blog,index)=>(
+                        <div className='blog-preview' key={blog.id}>
+                        <div><img src={blog.image} alt={blog.title}/></div>
+                        <div className='blog-preview-info'>
+                            <p>{blog.title}</p>
+                            <p>{blog.body}</p>
+                        </div>
+                        
+                    </div>
+                    ))
+                }
             </div>
         </div>
         <Partnered />
