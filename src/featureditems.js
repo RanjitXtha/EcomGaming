@@ -7,6 +7,7 @@ import hyperx from './images/hyperx.webp';
 import streaming from './images/streaming.jpg';
 import { useInView } from 'react-intersection-observer';
 import { Data } from './data';
+import { useRef } from 'react';
 
 const Featured = ()=>{
 
@@ -124,19 +125,40 @@ const Partnered = ()=>{
 
 
 const Community = ()=>{
+    const container = useRef(null);
+   
+    const scroll = (dir)=>{
+        const scrollAmount = container.current.clientWidth * dir;
+        console.log(scrollAmount);
+        container.current.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth', 
+          });
+    }
+
 const Images = [
-    pc1,pc3,pc,hyperx,
+    pc1,pc3,pc,hyperx,pc1,pc3,pc,hyperx,
 ]
 
     return(
-        <div className="community">
-        {
-            Images.map((img,index)=>(
-
-                <img src={img} alt={index} key ={index} />
-            ))
-        }
+        <div className='community-container'>
+             <div className="community" ref={container}>
+            {
+                Images.map((img,index)=>(
+                    <div className='community-image'>
+                        <img src={img} alt={index} key ={index} />
+                    </div>
+                    
+                ))
+            }
+           
+            </div>
+            <button style={{left:'-2.5rem'}} onClick={()=>{scroll(-1)}}>&lt;</button>
+            <button style={{right:'-2.5rem'}} onClick={()=>{scroll(1)}}>&gt;</button>
         </div>
+           
+             
+      
     );
 }
 export default Featured;
