@@ -22,7 +22,7 @@ const Header = () => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, []); 
 
     const searchBarStyle = {
         width:'0px',opacity:'0',pointerEvents:'none'
@@ -34,7 +34,7 @@ const Header = () => {
                 Treasure
             </div>
             <div className="header-nav">
-                <nav><Link to='/home'>Home</Link></nav>
+                <nav><Link index to='/home'>Home</Link></nav>
                 <nav><Link to='/shop'>Store</Link></nav>
                 <nav>Community</nav>
                 <nav>Support</nav>

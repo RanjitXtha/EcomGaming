@@ -8,7 +8,7 @@ import monitor from './images/monitor.png';
 import keyboard from './images/keyboard.png';
 import headset from './images/headset.png';
 import computer from './images/computer.jpg';
-import './topproducts.css';
+import './gallery.css';
 
 import { useEffect , useState } from 'react'
 const Gallery = () => {
@@ -55,7 +55,7 @@ const Gallery = () => {
                     <div className="slider" id={imageGallery[currentIndex].index}>
                         <div className="slider-info">
                             <p style={{fontWeight: 'bolder'}}>{imageGallery[currentIndex].title}</p>
-                            <p style={{fontSize: '25px', marginTop:'10px'}}>{imageGallery[currentIndex].info}</p>
+                            <p style={{fontSize: '2.3rem', marginTop:'1rem'}}>{imageGallery[currentIndex].info}</p>
                             <button className="buy-now-button">Shop Now</button>
                         </div>
                         <img className="slider-img" src={imageGallery[currentIndex].images} key={imageGallery[currentIndex].images} />
@@ -72,20 +72,19 @@ const Gallery = () => {
                 </div>
             </div>
 
-            <div className="top-products">
-                <p>Top products</p>
-                <div className="product-slider">
+            <section>
+                <h1>Top products</h1>
+                <div className="top-products">
                     {topProduct.map(item => (
                         <div className="top-items" key={item.index}>
                             <img src={item.images} alt={item.index}/>
                             <div>
                                 {item.name}
-                                <p>Hello</p>
                             </div>
                         </div>
                     ))}
                 </div>
-            </div>
+            </section>
         </div>
         
     );
