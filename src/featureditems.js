@@ -84,8 +84,8 @@ const Blogs = ({items,index})=>{
             </div>
 
             <div className="special-texts">
-                <p style={{fontSize:'40px',
-                marginBottom:'20px'
+                <p style={{fontSize:'4rem',
+                marginBottom:'2rem'
                 }}>
                     {items.title}
                 </p>

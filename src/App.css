@@ -76,17 +76,8 @@ html{
 .title{
     font-size: 40px;
     font-weight: bolder;
-    position:relative;
+
     margin-bottom: 50px;
     text-align: center;
 }
 
-.title::after{
-    position:absolute;
-    width:100%;
-    content: '';
-    background-color: white;
-    height:3px;
-    left:0px;
-    bottom:-15px;
-}
