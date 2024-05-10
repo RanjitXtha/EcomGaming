@@ -9,6 +9,11 @@ import { useInView } from 'react-intersection-observer';
 import { Data } from './data';
 import { useRef } from 'react';
 
+import { FaRegUser } from "react-icons/fa";
+import { AiOutlineLike } from "react-icons/ai";
+import { FaRegComment } from "react-icons/fa";
+import { FaRegShareSquare } from "react-icons/fa";
+
 const Featured = ()=>{
 
     return(
@@ -32,6 +37,12 @@ const Featured = ()=>{
                             <img src={blog.image} alt={blog.title}/>
                             <div className='blog-preview-info'>
                                 <h2>{blog.title}</h2>
+                                <p style={{display:'flex',columnGap:'2rem',color:'rgb(197, 197, 197)' ,marginBottom:'1rem'}}>
+                                    <p><FaRegUser />By {blog.author} </p>
+                                    <div>
+                                    {blog.likes}<AiOutlineLike className="stat-icon"/> {blog.comments}<FaRegComment className="stat-icon"/>  {blog.shares}<FaRegShareSquare className="stat-icon"/>
+                                    </div>
+                                </p>
                                 <p>{blog.body}</p>
                             </div>  
                         </div>
@@ -117,8 +128,6 @@ const Partnered = ()=>{
                 <div>RedDragon</div>
                 
             </div>
-
-          
         </div>
     )
 }
@@ -141,11 +150,14 @@ const Images = [
 ]
 
     return(
-        <div className='community-container'>
+        <div>
+            <h1>Join us and be a part of our family!!!</h1>
+            <div className='community-container'>
+            
              <div className="community" ref={container}>
             {
                 Images.map((img,index)=>(
-                    <div className='community-image'>
+                    <div className='community-image' key={index}>
                         <img src={img} alt={index} key ={index} />
                     </div>
                     
@@ -156,6 +168,8 @@ const Images = [
             <button style={{left:'-2.5rem'}} onClick={()=>{scroll(-1)}}>&lt;</button>
             <button style={{right:'-2.5rem'}} onClick={()=>{scroll(1)}}>&gt;</button>
         </div>
+        </div>
+        
            
              
       

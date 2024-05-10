@@ -1,0 +1,23 @@
+.blogs{
+    margin:10rem 5rem;
+}
+
+.blogs > .blog-preview>img{
+    height:15vw;
+    width:15vw;
+}
+
+.blogs > .blog-preview{
+    height:auto;
+    margin-bottom: 4rem;
+}
+
+.blogs .blog-preview-info > div{
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+
+.author-name{
+    margin-top: 2rem;
+    color:rgb(197, 197, 197);
+}

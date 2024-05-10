@@ -5,14 +5,14 @@ import { useEffect , useState } from 'react'
 import { Link } from 'react-router-dom';
 
 import React ,{useContext} from 'react';
-import { CartContext } from './CartContext';
+import { CartContext } from './Context/CartContext';
 
 const Header = () => {
     const [atTop, setAtTop] = useState(true);
     const [isSearchBarClicked, setIsSearchBarClicked] = useState(false);
 
     const {cartItems} = useContext(CartContext);
-
+    const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -22,6 +22,7 @@ const Header = () => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
+        
     }, []); 
 
     const searchBarStyle = {
@@ -36,7 +37,7 @@ const Header = () => {
             <div className="header-nav">
                 <nav><Link index to='/home'>Home</Link></nav>
                 <nav><Link to='/shop'>Store</Link></nav>
-                <nav>Community</nav>
+                <nav><Link to='/blogs'>Blogs</Link></nav>
                 <nav>Support</nav>
             </div>
 
@@ -47,7 +48,7 @@ const Header = () => {
                 </nav>
                 <nav className="cart-item-number">
                     {
-                        cartItems.length===0?null:<div>{cartItems.length}</div>
+                        cartItems.length===0?null:<div>{totalQuantity}</div>
                     }
                    <Link to="/mycart"> <FontAwesomeIcon icon={faCartShopping} /> </Link>
                 </nav>

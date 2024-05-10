@@ -17,7 +17,7 @@ const Gallery = () => {
         {images: keyboard, name: 'Keyboard', index: 2},
         {images: headset, name: 'Accesories', index: 3},
         {images: monitor, name: 'Monitor', index: 4},
-        {images: computer, name: 'Gaming PC', index: 4},
+        {images: computer, name: 'Gaming PC', index: 5},
     ];
 
 

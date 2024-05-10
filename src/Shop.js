@@ -1,17 +1,9 @@
 import React, { useState, useReducer } from 'react';
 import { Link } from 'react-router-dom';
 import './shop.css';
-import cooler from './images/cooler.avif'
-import { sortReducer } from './cartReducer';
-
-export const products = [
-  { id: 0, price: '110', star: 4, info: 'Dahua DHI-LM22-C201P Monitor - 21.5" IPS display, Full-HD resolution, 100Hz Refresh Rate', image: cooler },
-  { id: 1, price: '111', star: 4, info: 'Aahua DHI-LM22-C201P Monitor - 21.5" IPS display, Full-HD resolution, 100Hz Refresh Rate', image: cooler },
-  { id: 2, price: '112', star: 4, info: 'DSahua DHI-LM22-C201P Monitor - 21.5" IPS display, Full-HD resolution, 100Hz Refresh Rate', image: cooler },
-  { id: 3, price: '113', star: 4, info: 'Dahua DHI-LM22-C201P Monitor - 21.5" IPS display, Full-HD resolution, 100Hz Refresh Rate', image: cooler },
-  { id: 4, price: '114', star: 4, info: 'xahua DHI-LM22-C201P Monitor - 21.5" IPS display, Full-HD resolution, 100Hz Refresh Rate', image: cooler },
-  { id: 5, price: '114', star: 4, info: 'bahua DHI-LM22-C201P Monitor - 21.5" IPS display, Full-HD resolution, 100Hz Refresh Rate', image: cooler },
-];
+import { sortReducer } from './Reducer/sortReducer';
+import { products } from './data';
+import { FaStar, FaRegStar } from 'react-icons/fa';
 
 const Shop = () => {
   const [sortedProducts, dispatch] = useReducer(sortReducer, products);
@@ -39,7 +31,7 @@ const Shop = () => {
 
   // Filter products based on the search term
   const filteredProducts = sortedProducts.filter(product =>
-    product.info.toLowerCase().includes(searchTerm.toLowerCase())
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   // Handle search term change
@@ -48,8 +40,9 @@ const Shop = () => {
   };
 
   return (
-    <div style={{ marginTop: '100px' }}>
-      <div className="shop">
+    <div style={{ margin: '10rem 5rem'}}>
+      <div className='sort-search'>
+        <input type="text" placeholder="Search" className="searchbar" value={searchTerm} onChange={handleSearchChange} />
         <div className="sort-selection">
           <form action="#">
             <label htmlFor="sort"></label>
@@ -61,20 +54,23 @@ const Shop = () => {
             </select>
           </form>
         </div>
-
+      </div>
+        
         <div className="shop-products">
-          <input type="text" placeholder="Search" className="searchbar" value={searchTerm} onChange={handleSearchChange} />
+       
           {filteredProducts.map((product) => (
             <Link to={`/product/${product.id}`} key={product.id} style={{ textDecoration: 'none', color: 'white' }}>
               <div className="shop-products-items" key={product.id}>
-                <img src={product.image} alt={product.info} />
-                <p className="shop-items-info">{product.info}</p>
-                <div>
-                  <p className="price">Price: Rs.{product.price}</p>
+                <img src={product.image} alt={product.name} />
+                
+                <div className="shop-items-info">
+                  <p>{product.name}</p>
+                  <span>Price: Rs.{product.price}</span>
+                  <span>
+                    <StarRating rating={product.star} />
+                  </span>
                 </div>
-                <div>
-                  Star: {product.star}
-                </div>
+               
               </div>
             </Link>
           ))}
@@ -82,8 +78,16 @@ const Shop = () => {
         </div>
 
       </div>
-    </div>
   );
 };
 
 export default Shop;
+
+
+export const StarRating = ({ rating, maxStars = 5 }) => {
+  const stars = Array.from({ length: maxStars }, (_, index) => {
+    return index < rating ? <FaStar key={index} color="gold" /> : <FaRegStar key={index} color="gray" />;
+  });
+
+  return <div>{stars}</div>;
+};

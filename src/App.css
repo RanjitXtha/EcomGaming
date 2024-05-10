@@ -66,17 +66,10 @@ html{
     }
   }
 
-.hello{
-    background-color: red;
-    height:100px;
-    width:100px;
-    z-index:100;
-}
 
 .title{
     font-size: 40px;
     font-weight: bolder;
-
     margin-bottom: 50px;
     text-align: center;
 }
