@@ -1,11 +1,11 @@
-import './header.css';
+import '../cssFiles/header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faMagnifyingGlass,faCartShopping} from '@fortawesome/free-solid-svg-icons';
 import { useEffect , useState } from 'react'
 import { Link } from 'react-router-dom';
 
 import React ,{useContext} from 'react';
-import { CartContext } from './Context/CartContext';
+import { CartContext } from '../Context/CartContext';
 
 const Header = () => {
     const [atTop, setAtTop] = useState(true);

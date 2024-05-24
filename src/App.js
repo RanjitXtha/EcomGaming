@@ -1,12 +1,12 @@
 import { CartProvider } from './Context/CartContext';
-import Header from './header';
-import Footer from './footer';
-import Home from './Home';
-import Shop from './Shop';
+import Header from './components/header';
+import Footer from './components/footer';
+import Home from './pages/Home';
+import Shop from './pages/Shop';
 import './App.css';
-import Product from './Product';
-import Cart from './Cart';
-import Blogs from './communities';
+import Product from './pages/Product';
+import Cart from './components/Cart';
+import Blogs from './components/communities';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
@@ -22,10 +22,9 @@ function App() {
           <Route path="/shop" element={<Shop />}/>
           <Route path="/product/:id" element={<Product />} />
           <Route path="/mycart" element={<Cart />} />
-          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs" element={<Blogs />} /> 
         </Routes>
         <Footer />
-        
       </Router>
       </CartProvider>
       </div>

@@ -1,5 +1,5 @@
-import Featured from './featureditems';
-import Gallery from './imagegallery';
+import Featured from '../components/featureditems';
+import Gallery from '../components/imagegallery';
 
 const Home = ()=>{
     

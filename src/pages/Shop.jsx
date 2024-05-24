@@ -1,8 +1,8 @@
 import React, { useState, useReducer } from 'react';
 import { Link } from 'react-router-dom';
-import './shop.css';
-import { sortReducer } from './Reducer/sortReducer';
-import { products } from './data';
+import '../cssFiles/shop.css';
+import { sortReducer } from '../Reducer/sortReducer';
+import { products } from '../data';
 import { FaStar, FaRegStar } from 'react-icons/fa';
 
 const Shop = () => {

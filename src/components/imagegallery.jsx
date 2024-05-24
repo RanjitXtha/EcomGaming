@@ -1,26 +1,12 @@
-import pc from './images/pc.webp';
-import pc1 from './images/pc1.jpg';
-import pc3 from './images/pc3.webp';
-import cpu from './images/cpu.jpg';
-
-import mouse from './images/mouse.png';
-import monitor from './images/monitor.png';
-import keyboard from './images/keyboard.png';
-import headset from './images/headset.png';
-import computer from './images/computer.jpg';
-import './gallery.css';
+import pc from '../images/pc.webp';
+import pc1 from '../images/pc1.jpg';
+import pc3 from '../images/pc3.webp';
+import cpu from '../images/cpu.jpg';
+import '../cssFiles/gallery.css';
+import { products } from '../data';
 
 import { useEffect , useState } from 'react'
 const Gallery = () => {
-    const topProduct = [
-        {images: mouse, name: 'Mouse', index: 1},
-        {images: keyboard, name: 'Keyboard', index: 2},
-        {images: headset, name: 'Accesories', index: 3},
-        {images: monitor, name: 'Monitor', index: 4},
-        {images: computer, name: 'Gaming PC', index: 5},
-    ];
-
-
     const imageGallery = [
         {images:pc1,title:'Gaming PC',info:'Experience uncompromising performance',index:1},
         {images:pc,title:'Gaming PC',info:'Experience uncompromising performance',index:2},
@@ -75,9 +61,9 @@ const Gallery = () => {
             <section>
                 <h1>Top products</h1>
                 <div className="top-products">
-                    {topProduct.map(item => (
+                    {products.slice(0,5).map(item => (
                         <div className="top-items" key={item.index}>
-                            <img src={item.images} alt={item.index}/>
+                            <img src={item.image} alt={item.index}/>
                             <div>
                                 {item.name}
                             </div>

@@ -1,4 +1,4 @@
-import './footer.css';
+import '../cssFiles/footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareFacebook ,faSquareInstagram, faTiktok,faSquareXTwitter} from '@fortawesome/free-brands-svg-icons';
 const Footer =() =>{

@@ -1,8 +1,8 @@
 import React ,{useContext} from 'react';
 import { useParams } from 'react-router-dom';
-import { CartContext } from './Context/CartContext';
-import { products } from './data';
-import './product.css';
+import { CartContext } from '../Context/CartContext';
+import { products } from '../data';
+import '../cssFiles/product.css';
 import { StarRating } from './Shop';
 
 const Product = () => {

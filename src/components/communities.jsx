@@ -1,5 +1,5 @@
-import { Data } from "./data"
-import './community.css';
+import { Data } from "../data"
+import '../cssFiles/community.css';
 import { FaRegUser } from "react-icons/fa";
 import { AiOutlineLike } from "react-icons/ai";
 import { FaRegComment } from "react-icons/fa";
@@ -17,10 +17,14 @@ const Blogs = ()=>{
                             <div className='blog-preview-info'> 
                                 <div>
                                     <h2>{blog.title}</h2>
-                                    <p className="author-name"><FaRegUser style={{marginRight:'5px'}}/> By {blog.author}</p>
+                                    <p ><FaRegUser style={{marginRight:'5px'}}/> By {blog.author}</p>
                                 </div>
                                 <p>{blog.body}</p>
-                                <p className="blog-stat">{blog.likes}<AiOutlineLike className="stat-icon"/> {blog.comments}<FaRegComment className="stat-icon"/>  {blog.shares}<FaRegShareSquare className="stat-icon"/></p>
+                                <p className="blog-stat">
+                                    {blog.likes} <AiOutlineLike className="stat-icon"/> 
+                                    {blog.comments} <FaRegComment className="stat-icon"/>  
+                                    {blog.shares} <FaRegShareSquare className="stat-icon"/>
+                                </p>
                             </div> 
                         </div>
                     ))

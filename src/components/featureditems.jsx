@@ -1,12 +1,11 @@
-import './topproducts.css';
-import pc from './images/pc.webp';
-import pc1 from './images/pc1.jpg';
-import pc3 from './images/pc3.webp';
-import cpu from './images/cpu.jpg';
-import hyperx from './images/hyperx.webp';
-import streaming from './images/streaming.jpg';
+import '../cssFiles/topproducts.css';
+import pc from '../images/pc.webp';
+import pc1 from '../images/pc1.jpg';
+import pc3 from '../images/pc3.webp';
+import hyperx from '../images/hyperx.webp';
+import streaming from '../images/streaming.jpg';
 import { useInView } from 'react-intersection-observer';
-import { Data } from './data';
+import { Data } from '../data';
 import { useRef } from 'react';
 
 import { FaRegUser } from "react-icons/fa";
@@ -40,7 +39,9 @@ const Featured = ()=>{
                                 <p style={{display:'flex',columnGap:'2rem',color:'rgb(197, 197, 197)' ,marginBottom:'1rem'}}>
                                     <p><FaRegUser />By {blog.author} </p>
                                     <div>
-                                    {blog.likes}<AiOutlineLike className="stat-icon"/> {blog.comments}<FaRegComment className="stat-icon"/>  {blog.shares}<FaRegShareSquare className="stat-icon"/>
+                                    {blog.likes}<AiOutlineLike  style={{marginLeft:'0.7rem'}} className="stat-icon"/> 
+                                    {blog.comments}<FaRegComment style={{marginLeft:'0.7rem'}} className="stat-icon"/>  
+                                    {blog.shares}<FaRegShareSquare style={{marginLeft:'0.7rem'}} className="stat-icon"/>
                                     </div>
                                 </p>
                                 <p>{blog.body}</p>
